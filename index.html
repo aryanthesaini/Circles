@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circles</title>
+    <script type="text/javascript" src="paper-full.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.core.min.js"></script>
+
+
+    <style>
+        canvas {
+            width: 100%;
+            height: 100%;
+            background-color: #03071e;
+        }
+
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+        }
+    </style>
+    <script type="text/paperscript" canvas="myCanvas">
+
+        var sound1 = new Audio('sounds/bubbles.mp3');
+        var sound2 = new Audio('sounds/clay.mp3');
+        var sound3 = new Audio('sounds/confetti.mp3');
+        var sound4 = new Audio('sounds/corona.mp3');
+        var sound5 = new Audio('sounds/dotted-spiral.mp3');
+        var sound6 = new Audio('sounds/flash-1.mp3');
+        var sound7 = new Audio('sounds/flash-2.mp3');
+        var sound8 = new Audio('sounds/flash-3.mp3');
+        var sound9 = new Audio('sounds/glimmer.mp3');
+        var sound10 = new Audio('sounds/moon.mp3');
+        var sound11 = new Audio('sounds/pinwheel.mp3');
+        var sound12 = new Audio('sounds/piston-1.mp3');
+        var sound13 = new Audio('sounds/piston-2.mp3');
+        var sound14 = new Audio('sounds/piston-3.mp3');
+        var sound15 = new Audio('sounds/prism-1.mp3');
+        var sound16 = new Audio('sounds/prism-2.mp3');
+        var sound17 = new Audio('sounds/prism-3.mp3');
+        var sound18 = new Audio('sounds/splits.mp3');
+        var sound19 = new Audio('sounds/squiggle.mp3');
+        var sound20 = new Audio('sounds/strike.mp3');
+        var sound21 = new Audio('sounds/suspension.mp3');
+        var sound22 = new Audio('sounds/timer.mp3');
+        var sound23 = new Audio('sounds/veil.mp3');
+        var sound24 = new Audio('sounds/wipe.mp3');
+        var sound25 = new Audio('sounds/zig-zag.mp3');
+        var sound26 = new Audio('sounds/clay.mp3');
+    
+
+
+
+
+
+
+
+        // The amount of circles we want to make:
+var count = 150;
+
+// Create a symbol, which we will use to place instances of later:
+var path = new Path.Circle({
+	center: [0, 0],
+	radius: 10,
+	fillColor: 'white',
+	strokeColor: 'black'
+});
+
+var symbol = new Symbol(path);
+
+// Place the instances of the symbol:
+for (var i = 0; i < count; i++) {
+	// The center position is a random point in the view:
+	var center = Point.random() * view.size;
+	var placedSymbol = symbol.place(center);
+	placedSymbol.scale(i / count);
+}
+    
+    var circles = [];
+    function onKeyDown(event) {
+        var maxPoint = new Point(view.size.width, view.size.height);
+        var randomPoint = Point.random();
+        var point = maxPoint * randomPoint;
+        var newCircle= new Path.Circle(point, 200);
+        newCircle.fillColor= 'yellow';
+        circles.push(newCircle);
+    if(event.key=="a"){
+        sound1.play();
+        newCircle.fillColor= 'green';
+    }
+    else if(event.key=="b"){
+        sound2.play();
+        newCircle.fillColor= "red";
+    }
+
+    else if(event.key=="c"){
+        sound3.play();
+        newCircle.fillColor= "blue";
+    }
+
+    else if(event.key=="d"){
+        sound4.play();
+        newCircle.fillColor= "yellow";
+    }
+
+    else if(event.key=="e"){
+        sound5.play();
+        newCircle.fillColor= "purple";
+    }
+
+    else if(event.key=="f"){
+        sound6.play();
+        newCircle.fillColor= "cyan";
+    }
+
+    else if(event.key=="g"){
+        sound7.play();
+        newCircle.fillColor= "white";
+    }
+
+    else if(event.key=="h"){
+        sound8.play();
+        newCircle.fillColor= "aqua";
+    }
+
+    else if(event.key=="i"){
+        sound9.play();
+        newCircle.fillColor= "coral";
+    }
+
+    else if(event.key=="j"){
+        sound10.play();
+        newCircle.fillColor= "teal";
+    }
+
+    else if(event.key=="k"){
+        sound11.play();
+        newCircle.fillColor= "yellow";
+    }
+
+
+    else if(event.key=="l"){
+        sound12.play();
+        newCircle.fillColor= "pink";
+    }
+
+
+    else if(event.key=="m"){
+        sound13.play();
+        newCircle.fillColor= "silver";
+    }
+
+
+    else if(event.key=="n"){
+        sound14.play();
+        newCircle.fillColor= "gold";
+    }
+
+
+    else if(event.key=="o"){
+        sound15.play();
+        newCircle.fillColor= "lavender";
+    }
+
+
+    else if(event.key=="p"){
+        sound16.play();
+        newCircle.fillColor= "yellow";
+    }
+
+
+
+    else if(event.key=="q"){
+        sound17.play();
+        newCircle.fillColor= "red";
+    }
+
+
+
+    else if(event.key=="r"){
+        sound18.play();
+        newCircle.fillColor= "blue";
+    }
+
+
+    else if(event.key=="s"){
+        sound19.play();
+        newCircle.fillColor= "white";
+    }
+
+
+    else if(event.key=="t"){
+        sound20.play();
+        newCircle.fillColor= "pink";
+    }
+
+
+    else if(event.key=="u"){
+        sound21.play();
+        newCircle.fillColor= "cyan";
+    }
+
+
+    else if(event.key=="v"){
+        sound22.play();
+        newCircle.fillColor= "green";
+    }
+
+
+
+    else if(event.key=="w"){
+        sound23.play();
+        newCircle.fillColor= "green";
+    }
+
+
+
+    else if(event.key=="x"){
+        sound24.play();
+        newCircle.fillColor= "violet";
+    }
+
+
+
+    else if(event.key=="y"){
+        sound25.play();
+        newCircle.fillColor= "red";
+    }
+
+
+
+    else if(event.key=="z"){
+        sound26.play();
+        newCircle.fillColor= "yellow";
+    }
+
+
+   
+    }
+   
+
+    function onFrame(event){
+    for(var i=0;i<circles.length;i++){ circles[i].fillColor.hue+=2; circles[i].scale(0.9); }
+    for (var i = 0; i < count; i++) {
+		var item = project.activeLayer.children[i];
+		
+		// Move the item 1/20th of its width to the right. This way
+		// larger circles move faster than smaller circles:
+		item.position.x += item.bounds.width / 20;
+
+		// If the item has left the view on the right, move it back
+		// to the left:
+		if (item.bounds.left > view.size.width) {
+			item.position.x = -item.bounds.width;
+		}
+	}} </script>
+</head>
+
+<body>
+    <canvas id="myCanvas" resize></canvas>
+</body>
+
+</html>
